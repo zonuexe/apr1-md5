@@ -1,5 +1,5 @@
 {
-    "name": "whitehat101/apr1-md5",
+    "name": "zonuexe/apr1-md5",
     "description": "Apache's APR1-MD5 algorithm in pure PHP",
     "homepage": "https://github.com/whitehat101/apr1-md5",
     "license": "MIT",
@@ -8,20 +8,25 @@
         {
             "name": "Jeremy Ebler",
             "email": "jebler@gmail.com"
+        },
+        {
+            "name": "USAMI Kenta",
+            "email": "tadsan@zonu.me"
         }
     ],
 
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=7.3"
     },
 
     "require-dev": {
-        "phpunit/phpunit": "4.0.*"
+        "phpstan/phpstan": "^1.9",
+        "phpunit/phpunit": "^9.5 || ^7.5"
     },
 
     "autoload": {
         "psr-4": {
-            "WhiteHat101\\Crypt\\": "src"
+            "zonuexe\\": "src"
         }
     }
 }

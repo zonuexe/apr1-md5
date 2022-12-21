@@ -11,7 +11,7 @@ composer.json:
 ```json
 {
     "require": {
-        "whitehat101/apr1-md5": "~1.0"
+        "zonuexe/apr1-md5": "~1.0"
     }
 }
 ```
@@ -19,19 +19,19 @@ composer.json:
 ## Use
 
 ```php
-use WhiteHat101\Crypt\APR1_MD5;
+use zonuexe\Apr1md5;
 
 // Check plaintext password against an APR1-MD5 hash
-echo APR1_MD5::check('plaintext', '$apr1$PVWlTz/5$SNkIVyogockgH65nMLn.W1');
+echo Apr1md5::check('plaintext', '$apr1$PVWlTz/5$SNkIVyogockgH65nMLn.W1');
 
 // Hash a password with a known salt
-echo APR1_MD5::hash('PASSWORD', '__SALT__');
+echo Apr1md5::hash('PASSWORD', '__SALT__');
 
 // Hash a password with a secure random salt
-echo APR1_MD5::hash('PASSWORD');
+echo Apr1md5::hash('PASSWORD');
 
 // Generate a secure random salt
-echo APR1_MD5::salt();
+echo Apr1md5::salt();
 ```
 
 The ideal `__SALT__` is an 8 character string. Valid salts are alphanumeric and `.` or `/`. Shorter salts are allowed. Longer salts are truncated after the 8th character.

@@ -1,19 +1,23 @@
 <?php
 
-use WhiteHat101\Crypt\APR1_MD5;
+declare(strict_types=1);
 
-class APR1_MD5_SaltTest extends PHPUnit_Framework_TestCase {
+namespace zonuexe;
 
-    public function testSaltType() {
-        $this->assertInternalType('string', APR1_MD5::salt());
+class APR1_MD5_SaltTest extends \PHPUnit\Framework\TestCase
+{
+    public function testSaltType(): void
+    {
+        $this->assertIsString(Apr1md5::salt());
     }
 
-    public function testSaltPattern() {
-        $this->assertRegExp('/.{8}/', APR1_MD5::salt());
+    public function testSaltPattern(): void
+    {
+        $this->assertMatchesRegularExpression('/.{8}/', Apr1md5::salt());
     }
 
-    public function testSaltRamdomness() {
-        $this->assertNotEquals(APR1_MD5::salt(), APR1_MD5::salt());
+    public function testSaltRamdomness(): void
+    {
+        $this->assertNotEquals(Apr1md5::salt(), Apr1md5::salt());
     }
-
 }
